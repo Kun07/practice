@@ -6,12 +6,12 @@ from django.conf.urls.static import static
 from users import views as user_views
 
 urlpatterns = [
-    url('admin/', admin.site.urls),
-    url('register/', user_views.register, name='register'),
-    url('profile/', user_views.profile, name='profile'),
-    url('login/', auth_views.LoginView.as_view(template_name='users/login.html'), name='login'),
-    url('logout/', auth_views.LogoutView.as_view(template_name='users/logout.html'), name='logout'),
-    url('', include('blog.urls')),
+    url(r'^admin/', admin.site.urls),
+    url(r'^register/', user_views.register, name='register'),
+    url(r'^profile/', user_views.profile, name='profile'),
+    url(r'^login/', auth_views.LoginView.as_view(template_name='users/login.html'), name='login'),
+    url(r'^logout/', auth_views.LogoutView.as_view(template_name='users/logout.html'), name='logout'),
+    url(r'^', include('blog.urls')),
 ]
 
 
